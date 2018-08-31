@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-application-heading" jhiTranslate="informationManagerApp.application.home.createOrEditLabel">Create or edit a Application</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!application.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="application.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="informationManagerApp.application.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="application.name" required/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="informationManagerApp.application.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="application.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="informationManagerApp.application.uaaId" for="field_uaaId">Uaa Id</label>
+                    <input type="text" class="form-control" name="uaaId" id="field_uaaId"
+                        [(ngModel)]="application.uaaId" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="informationManagerApp.application.authenticationTypes" for="field_authenticationTypes">Authentication Types</label>
+                    <select class="form-control" id="field_authenticationTypes" name="authenticationTypes" [(ngModel)]="application.authenticationTypes"  required>
+                        <option *ngIf="!editForm.value.authenticationTypes" [ngValue]="null" selected></option>
+                        <option [ngValue]="authenticationTypeOption.id === application.authenticationTypes?.id ? application.authenticationTypes : authenticationTypeOption" *ngFor="let authenticationTypeOption of authenticationtypes; trackBy: trackAuthenticationTypeById">{{authenticationTypeOption.name}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.authenticationTypes?.dirty && editForm.controls.authenticationTypes?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.authenticationTypes?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="informationManagerApp.application.applicationClients" for="field_applicationClients">Application Clients</label>
+                    <select class="form-control" id="field_applicationClients" name="applicationClients" [(ngModel)]="application.applicationClients"  required>
+                        <option *ngIf="!editForm.value.applicationClients" [ngValue]="null" selected></option>
+                        <option [ngValue]="applicationClientOption.id === application.applicationClients?.id ? application.applicationClients : applicationClientOption" *ngFor="let applicationClientOption of applicationclients; trackBy: trackApplicationClientById">{{applicationClientOption.name}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.applicationClients?.dirty && editForm.controls.applicationClients?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.applicationClients?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

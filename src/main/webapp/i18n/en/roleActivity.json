@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "roleActivity" : {
+            "home": {
+                "title": "Role Activities",
+                "createLabel": "Create a new Role Activity",
+                "createOrEditLabel": "Create or edit a Role Activity"
+            },
+            "created": "A new Role Activity is created with identifier {{ param }}",
+            "updated": "A Role Activity is updated with identifier {{ param }}",
+            "deleted": "A Role Activity is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Role Activity {{ id }}?"
+            },
+            "detail": {
+                "title": "Role Activity"
+            },
+            "roles": "Roles",
+            "activity": "Activity"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Role",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uaaId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "roleActivity",
+            "otherEntityName": "roleActivity",
+            "otherEntityRelationshipName": "roles"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "staffRole",
+            "otherEntityName": "staffRole",
+            "otherEntityRelationshipName": "role"
+        }
+    ],
+    "changelogDate": "20180830163105",
+    "entityTableName": "role",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

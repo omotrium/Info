@@ -1,0 +1,29 @@
+{
+    "name": "StaffRole",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "staff",
+            "otherEntityName": "staff",
+            "otherEntityField": "username"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "role",
+            "otherEntityName": "role",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20180830163111",
+    "entityTableName": "staff_role",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

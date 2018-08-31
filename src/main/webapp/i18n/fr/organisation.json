@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "organisation" : {
+            "home": {
+                "title": "Organisations",
+                "createLabel": "Créer un nouveau Organisation",
+                "createOrEditLabel": "Créer ou éditer un Organisation"
+            },
+            "created": "Un nouveau Organisation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Organisation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Organisation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Organisation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Organisation"
+            },
+            "name": "Name",
+            "staffs": "Staffs"
+        }
+    }
+}

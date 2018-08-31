@@ -1,0 +1,51 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uaaId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "applicationUser",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "application"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "authenticationTypes",
+            "otherEntityName": "authenticationType",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "applicationClients",
+            "otherEntityName": "applicationClient",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20180830163101",
+    "entityTableName": "application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "roleActivity" : {
+            "home": {
+                "title": "RoleActivities",
+                "createLabel": "Créer un nouveau Role Activity",
+                "createOrEditLabel": "Créer ou éditer un Role Activity"
+            },
+            "created": "Un nouveau Role Activity a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Role Activity avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Role Activity avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Role Activity {{ id }} ?"
+            },
+            "detail": {
+                "title": "Role Activity"
+            },
+            "roles": "Roles",
+            "activity": "Activity"
+        }
+    }
+}

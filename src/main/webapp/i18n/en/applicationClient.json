@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "applicationClient" : {
+            "home": {
+                "title": "Application Clients",
+                "createLabel": "Create a new Application Client",
+                "createOrEditLabel": "Create or edit a Application Client"
+            },
+            "created": "A new Application Client is created with identifier {{ param }}",
+            "updated": "A Application Client is updated with identifier {{ param }}",
+            "deleted": "A Application Client is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Application Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Application Client"
+            },
+            "name": "Name",
+            "applications": "Applications"
+        }
+    }
+}

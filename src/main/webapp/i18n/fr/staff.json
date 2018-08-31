@@ -1,0 +1,34 @@
+
+{
+    "informationManagerApp": {
+        "staff" : {
+            "home": {
+                "title": "Staff",
+                "createLabel": "Créer un nouveau Staff",
+                "createOrEditLabel": "Créer ou éditer un Staff"
+            },
+            "created": "Un nouveau Staff a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Staff avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Staff avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Staff {{ id }} ?"
+            },
+            "detail": {
+                "title": "Staff"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "username": "Username",
+            "email": "Email",
+            "accountStatus": "Account Status",
+            "password": "Password",
+            "verifiedBy": "Verified By",
+            "loginCount": "Login Count",
+            "applicationUser": "Application User",
+            "staffRole": "Staff Role",
+            "organisations": "Organisations",
+            "internalGroup": "Internal Group",
+            "userTypes": "User Types"
+        }
+    }
+}

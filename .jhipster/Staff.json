@@ -1,0 +1,87 @@
+{
+    "name": "Staff",
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "accountStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "verifiedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "loginCount",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "applicationUser",
+            "otherEntityName": "applicationUser",
+            "otherEntityRelationshipName": "staff"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "staffRole",
+            "otherEntityName": "staffRole",
+            "otherEntityRelationshipName": "staff"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "organisations",
+            "otherEntityName": "organisation",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "internalGroup",
+            "otherEntityName": "internalGroup",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "userTypes",
+            "otherEntityName": "userType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20180830163100",
+    "entityTableName": "staff",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,33 @@
+{
+    "name": "UserType",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "staffs",
+            "otherEntityName": "staff",
+            "otherEntityRelationshipName": "userTypes"
+        }
+    ],
+    "changelogDate": "20180830163107",
+    "entityTableName": "user_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

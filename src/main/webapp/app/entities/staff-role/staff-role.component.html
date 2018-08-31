@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="informationManagerApp.staffRole.home.title">Staff Roles</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-staff-role" [routerLink]="['/staff-role/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="informationManagerApp.staffRole.home.createLabel">
+            Create new Staff Role
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="staffRoles">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="informationManagerApp.staffRole.staff">Staff</span></th>
+            <th><span jhiTranslate="informationManagerApp.staffRole.role">Role</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let staffRole of staffRoles ;trackBy: trackId">
+                <td><a [routerLink]="['/staff-role', staffRole.id, 'view' ]">{{staffRole.id}}</a></td>
+                <td>
+                    <div *ngIf="staffRole.staff">
+                        <a [routerLink]="['../staff', staffRole.staff?.id, 'view' ]" >{{staffRole.staff?.username}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="staffRole.role">
+                        <a [routerLink]="['../role', staffRole.role?.id, 'view' ]" >{{staffRole.role?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/staff-role', staffRole.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/staff-role', staffRole.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'staff-role/'+ staffRole.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

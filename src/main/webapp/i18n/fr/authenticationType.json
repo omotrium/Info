@@ -1,0 +1,24 @@
+
+{
+    "informationManagerApp": {
+        "authenticationType" : {
+            "home": {
+                "title": "AuthenticationTypes",
+                "createLabel": "Créer un nouveau Authentication Type",
+                "createOrEditLabel": "Créer ou éditer un Authentication Type"
+            },
+            "created": "Un nouveau Authentication Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Authentication Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Authentication Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Authentication Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "Authentication Type"
+            },
+            "name": "Name",
+            "token": "Token",
+            "applications": "Applications"
+        }
+    }
+}

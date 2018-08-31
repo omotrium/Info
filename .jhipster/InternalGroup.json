@@ -1,0 +1,29 @@
+{
+    "name": "InternalGroup",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "staffs",
+            "otherEntityName": "staff",
+            "otherEntityRelationshipName": "internalGroup"
+        }
+    ],
+    "changelogDate": "20180830163108",
+    "entityTableName": "internal_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

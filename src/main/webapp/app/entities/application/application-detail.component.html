@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="application">
+            <h2><span jhiTranslate="informationManagerApp.application.detail.title">Application</span> {{application.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="informationManagerApp.application.name">Name</span></dt>
+                <dd>
+                    <span>{{application.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.application.description">Description</span></dt>
+                <dd>
+                    <span>{{application.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.application.uaaId">Uaa Id</span></dt>
+                <dd>
+                    <span>{{application.uaaId}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.application.authenticationTypes">Authentication Types</span></dt>
+                <dd>
+                    <div *ngIf="application.authenticationTypes">
+                        <a [routerLink]="['/authentication-type', application.authenticationTypes?.id, 'view']">{{application.authenticationTypes?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.application.applicationClients">Application Clients</span></dt>
+                <dd>
+                    <div *ngIf="application.applicationClients">
+                        <a [routerLink]="['/application-client', application.applicationClients?.id, 'view']">{{application.applicationClients?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application', application.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

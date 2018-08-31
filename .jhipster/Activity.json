@@ -1,0 +1,37 @@
+{
+    "name": "Activity",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uaaId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "roleActivity",
+            "otherEntityName": "roleActivity",
+            "otherEntityRelationshipName": "activity"
+        }
+    ],
+    "changelogDate": "20180830163106",
+    "entityTableName": "activity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

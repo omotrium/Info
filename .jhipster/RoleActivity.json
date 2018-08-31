@@ -1,0 +1,29 @@
+{
+    "name": "RoleActivity",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "roles",
+            "otherEntityName": "role",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "activity",
+            "otherEntityName": "activity",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20180830163110",
+    "entityTableName": "role_activity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

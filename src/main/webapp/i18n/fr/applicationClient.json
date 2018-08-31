@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "applicationClient" : {
+            "home": {
+                "title": "ApplicationClients",
+                "createLabel": "Créer un nouveau Application Client",
+                "createOrEditLabel": "Créer ou éditer un Application Client"
+            },
+            "created": "Un nouveau Application Client a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Application Client avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Application Client avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Application Client {{ id }} ?"
+            },
+            "detail": {
+                "title": "Application Client"
+            },
+            "name": "Name",
+            "applications": "Applications"
+        }
+    }
+}

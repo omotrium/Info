@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "internalGroup" : {
+            "home": {
+                "title": "InternalGroups",
+                "createLabel": "Créer un nouveau Internal Group",
+                "createOrEditLabel": "Créer ou éditer un Internal Group"
+            },
+            "created": "Un nouveau Internal Group a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Internal Group avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Internal Group avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Internal Group {{ id }} ?"
+            },
+            "detail": {
+                "title": "Internal Group"
+            },
+            "name": "Name",
+            "staffs": "Staffs"
+        }
+    }
+}

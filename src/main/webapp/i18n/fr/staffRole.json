@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "staffRole" : {
+            "home": {
+                "title": "StaffRoles",
+                "createLabel": "Créer un nouveau Staff Role",
+                "createOrEditLabel": "Créer ou éditer un Staff Role"
+            },
+            "created": "Un nouveau Staff Role a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Staff Role avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Staff Role avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Staff Role {{ id }} ?"
+            },
+            "detail": {
+                "title": "Staff Role"
+            },
+            "staff": "Staff",
+            "role": "Role"
+        }
+    }
+}

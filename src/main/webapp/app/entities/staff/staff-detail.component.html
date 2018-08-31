@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="staff">
+            <h2><span jhiTranslate="informationManagerApp.staff.detail.title">Staff</span> {{staff.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="informationManagerApp.staff.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{staff.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{staff.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.username">Username</span></dt>
+                <dd>
+                    <span>{{staff.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.email">Email</span></dt>
+                <dd>
+                    <span>{{staff.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.accountStatus">Account Status</span></dt>
+                <dd>
+                    <span>{{staff.accountStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.password">Password</span></dt>
+                <dd>
+                    <span>{{staff.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.verifiedBy">Verified By</span></dt>
+                <dd>
+                    <span>{{staff.verifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.loginCount">Login Count</span></dt>
+                <dd>
+                    <span>{{staff.loginCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.organisations">Organisations</span></dt>
+                <dd>
+                    <div *ngIf="staff.organisations">
+                        <a [routerLink]="['/organisation', staff.organisations?.id, 'view']">{{staff.organisations?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.internalGroup">Internal Group</span></dt>
+                <dd>
+                    <div *ngIf="staff.internalGroup">
+                        <a [routerLink]="['/internal-group', staff.internalGroup?.id, 'view']">{{staff.internalGroup?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staff.userTypes">User Types</span></dt>
+                <dd>
+                    <div *ngIf="staff.userTypes">
+                        <a [routerLink]="['/user-type', staff.userTypes?.id, 'view']">{{staff.userTypes?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/staff', staff.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="activity">
+            <h2><span jhiTranslate="informationManagerApp.activity.detail.title">Activity</span> {{activity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="informationManagerApp.activity.name">Name</span></dt>
+                <dd>
+                    <span>{{activity.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.activity.description">Description</span></dt>
+                <dd>
+                    <span>{{activity.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.activity.uaaId">Uaa Id</span></dt>
+                <dd>
+                    <span>{{activity.uaaId}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/activity', activity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

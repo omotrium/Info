@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="informationManagerApp.roleActivity.home.title">Role Activities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-role-activity" [routerLink]="['/role-activity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="informationManagerApp.roleActivity.home.createLabel">
+            Create new Role Activity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="roleActivities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="informationManagerApp.roleActivity.roles">Roles</span></th>
+            <th><span jhiTranslate="informationManagerApp.roleActivity.activity">Activity</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let roleActivity of roleActivities ;trackBy: trackId">
+                <td><a [routerLink]="['/role-activity', roleActivity.id, 'view' ]">{{roleActivity.id}}</a></td>
+                <td>
+                    <div *ngIf="roleActivity.roles">
+                        <a [routerLink]="['../role', roleActivity.roles?.id, 'view' ]" >{{roleActivity.roles?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="roleActivity.activity">
+                        <a [routerLink]="['../activity', roleActivity.activity?.id, 'view' ]" >{{roleActivity.activity?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/role-activity', roleActivity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/role-activity', roleActivity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'role-activity/'+ roleActivity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

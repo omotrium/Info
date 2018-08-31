@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="staffRole">
+            <h2><span jhiTranslate="informationManagerApp.staffRole.detail.title">Staff Role</span> {{staffRole.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="informationManagerApp.staffRole.staff">Staff</span></dt>
+                <dd>
+                    <div *ngIf="staffRole.staff">
+                        <a [routerLink]="['/staff', staffRole.staff?.id, 'view']">{{staffRole.staff?.username}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.staffRole.role">Role</span></dt>
+                <dd>
+                    <div *ngIf="staffRole.role">
+                        <a [routerLink]="['/role', staffRole.role?.id, 'view']">{{staffRole.role?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/staff-role', staffRole.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+{
+    "informationManagerApp": {
+        "staffRole" : {
+            "home": {
+                "title": "Staff Roles",
+                "createLabel": "Create a new Staff Role",
+                "createOrEditLabel": "Create or edit a Staff Role"
+            },
+            "created": "A new Staff Role is created with identifier {{ param }}",
+            "updated": "A Staff Role is updated with identifier {{ param }}",
+            "deleted": "A Staff Role is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Staff Role {{ id }}?"
+            },
+            "detail": {
+                "title": "Staff Role"
+            },
+            "staff": "Staff",
+            "role": "Role"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="applicationUser">
+            <h2><span jhiTranslate="informationManagerApp.applicationUser.detail.title">Application User</span> {{applicationUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="informationManagerApp.applicationUser.staff">Staff</span></dt>
+                <dd>
+                    <div *ngIf="applicationUser.staff">
+                        <a [routerLink]="['/staff', applicationUser.staff?.id, 'view']">{{applicationUser.staff?.username}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="informationManagerApp.applicationUser.application">Application</span></dt>
+                <dd>
+                    <div *ngIf="applicationUser.application">
+                        <a [routerLink]="['/application', applicationUser.application?.id, 'view']">{{applicationUser.application?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application-user', applicationUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
